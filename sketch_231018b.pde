@@ -1,3 +1,5 @@
+import processing.pdf.*;
+
 PVector loc;
 PVector v;
 float w;
@@ -6,10 +8,12 @@ float theta,radius=360;
 
 
 
+
 void setup(){
   size(800,800);
   background(0);
   smooth(20);
+  size(400, 400, PDF, "filename.pdf");
 
   loc = new PVector(mouseX,mouseY);
   
@@ -51,10 +55,12 @@ void draw(){
     
  
   
-  
+  if (frameCount == 1000) {
+    exit();
+  } 
 }
 void mousePressed()
 
 { loc = new PVector(mouseX,mouseY);
 
-saveFrame();}
+}
